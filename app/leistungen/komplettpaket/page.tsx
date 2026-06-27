@@ -1,44 +1,49 @@
 import type { Metadata } from "next";
-import ServicePage from "@/components/ui/ServicePage";
+import ServiceDetail from "@/components/ui/ServiceDetail";
 
 export const metadata: Metadata = {
-  title: "Komplettpaket Autoaufbereitung Bielefeld – M&M Detailing",
+  title: "Komplettpaket – M&M Detailing Bielefeld",
   description:
-    "Komplette Innen- und Außenaufbereitung mobil in Bielefeld. Das Rundum-sorglos-Paket ab 240€.",
+    "Komplettpaket Innen & Außen: Rundum-Pflege mit intensiver Innenreinigung, schonender Außenaufbereitung und Detailing – mobil in Bielefeld.",
 };
 
 export default function Page() {
   return (
-    <ServicePage
-      badge="Komplettpaket"
-      title="Komplettpaket"
-      subtitle="Innen & Außen — das Rundum-sorglos-Paket für ganzheitliche Ergebnisse"
-      description="Das Komplettpaket kombiniert unsere Innenraum- und Außenaufbereitung zu einem durchgängigen Service. Dein Fahrzeug wird von A bis Z aufbereitet — Lack, Felgen, Innenraum, Cockpit, Glas. Alles in einem Termin, alles direkt bei dir."
-      prices={[
-        { size: "Kleinwagen", example: "VW Polo, Ford Fiesta", price: "ab 240€" },
-        { size: "Mittelklasse", example: "VW Passat, BMW 3er", price: "ab 270€" },
-        { size: "Großwagen/SUV/Van", example: "BMW X5, Mercedes V-Klasse", price: "ab 300€" },
-      ]}
-      duration="ca. 4–6 Stunden"
+    <ServiceDetail
+      hero={{
+        title: "Autoaufbereitung Bielefeld – Komplettpaket Innen & Außen",
+        subline:
+          "Professionelle Autoaufbereitung in Bielefeld: Rundum-Pflege für dein Fahrzeug mit intensiver Autoinnenreinigung, schonender Außenaufbereitung und hochwertigem Detailing – direkt bei dir vor Ort.",
+        bgImage: "/images/gallery/g01.jpg",
+      }}
       features={[
-        "Komplette Außenaufbereitung",
-        "Intensives Schaumbad & Handwäsche",
-        "Felgen- & Radkastenreinigung",
-        "Komplette Innenraumaufbereitung",
-        "Tiefenreinigung, Absaugen, Cockpitpflege",
-        "Lackpflege & Versiegelung",
-        "Felgenservice",
-        "Innen- und Außenglasreinigung",
-        "Detailarbeit inklusive",
+        { icon: "💧", title: "Gründliche Vorwäsche", text: "Schonende Vorwäsche, um losen Schmutz und grobe Rückstände zu entfernen – die ideale Basis für eine kratzfreie Autoaufbereitung in Bielefeld." },
+        { icon: "🛞", title: "Intensive Felgenreinigung", text: "Porentiefe Felgenreinigung mit Entfernung von Bremsstaub und Rückständen – für ein stimmiges Gesamtbild bei der Fahrzeugaufbereitung Bielefeld." },
+        { icon: "🧼", title: "Sanfte Handwäsche", text: "Sanfte Handwäsche mit Zwei-Eimer-Methode für ein sauberes, schonendes Lackfinish – perfekter Start für professionelles Detailing in Bielefeld." },
+        { icon: "🪟", title: "Glasreinigung innen & außen", text: "Streifenfreie Reinigung aller Scheiben für klare Sicht – ein wichtiger Bestandteil jeder Autoaufbereitung in Bielefeld.", highlight: true },
+        { icon: "🚗", title: "Innenraumreinigung komplett", text: "Gründliche Autoinnenreinigung: Staubsaugen des gesamten Innenraums, Reinigung von Kunststoffteilen, Cockpit, Mittelkonsole, Türverkleidungen sowie schwer erreichbaren Bereichen wie Lüftungsschlitzen und Fugen." },
+        { icon: "✨", title: "Detailarbeit innen & außen", text: "Sorgfältige Reinigung von Emblemen, Schaltern, Kanten, Fugen und schwer zugänglichen Stellen – für ein ganzheitliches Detailing-Ergebnis." },
+        { icon: "🚿", title: "Trocknung & Finish", text: "Schonende Trocknung mit weichen Tüchern und Druckluft verhindert Wasserflecken und sorgt für ein sauberes, einheitliches Endergebnis." },
       ]}
-      addons={[
-        "Tierhaare entfernen",
-        "Lederpflege",
-        "Geruchsbeseitigung",
-        "Motorraumreinigung",
-        "Polsterreinigung",
-      ]}
-      note="* Preise variieren je nach Verschmutzungsgrad. Wir besprechen alles transparent vorab."
+      extras={{
+        title: "Zusatzleistungen zum Komplettpaket",
+        subtitle:
+          "Ergänzend buchbare Spezialleistungen für noch intensivere Pflege, zusätzlichen Schutz oder spezielle Anforderungen.",
+        cards: [
+          { tag: "Innenraum", title: "Tierhaarentfernung", text: "Gründliche Entfernung von Tierhaaren aus Sitzen, Teppichen und Kofferraum.", href: "/leistungen/extras#tierhaare", image: "/images/gallery/g08.webp" },
+          { tag: "Innenraum", title: "Polsterreinigung", text: "Tiefenreinigung von Stoffpolstern bei Flecken und starker Verschmutzung.", href: "/leistungen/extras#polster", image: "/images/gallery/g10.webp" },
+          { tag: "Premium Pflege", title: "Lederreinigung & Pflege", text: "Schonende Reinigung und Pflege von Ledersitzen für Werterhalt und Schutz.", href: "/leistungen/extras#leder", image: "/images/gallery/g11.webp" },
+          { tag: "Innenraum", title: "Geruchsentfernung", text: "Gezielte Neutralisierung unangenehmer Gerüche im Fahrzeuginnenraum.", href: "/leistungen/extras#geruch", image: "/images/gallery/g02.webp" },
+          { tag: "Außenbereich", title: "Motorraumreinigung", text: "Optische Aufwertung des Motorraums – ideal vor Verkauf oder Rückgabe.", href: "/leistungen/extras#motor", image: "/images/gallery/g05.webp" },
+          { tag: "Schutz", title: "Lackversiegelung", text: "Schutzversiegelung für den Lack mit Tiefenglanz und Abperl-Effekt.", href: "/leistungen/extras#lack", image: "/images/gallery/g03.webp" },
+        ],
+      }}
+      cta={{
+        badge: "Innen & Außen",
+        words: ["Von Kopf", "bis Fuß."],
+        paragraph:
+          "Innenraum und Lack – beides in einem Termin. Wir kümmern uns um alles, du lehnst dich zurück.",
+      }}
     />
   );
 }
