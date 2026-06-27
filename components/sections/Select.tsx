@@ -1,70 +1,73 @@
 import Link from "next/link";
-import { Star, Check } from "lucide-react";
 
-const benefits = [
-  "13% Rabatt auf alle Leistungen",
-  "Fester Pflegeplan für dein Fahrzeug",
-  "Prioritätsbuchung bei Terminen",
-  "Persönlicher Ansprechpartner",
-  "Regelmäßige Qualitätskontrolle",
+const stats = [
+  { num: "20", suffix: ".", label: "Plätze gesamt" },
+  { num: "13", suffix: "%", label: "Ersparnis" },
+  { num: "5,0", suffix: "★", label: "Google" },
 ];
 
 export default function Select() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="rounded-3xl bg-[#1F2937] overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center p-8 md:p-12">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-[#00ADB5]/20 text-[#00ADB5] text-xs font-bold px-3 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-                M&M Select
-              </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-                Das Pflegeprogramm für Kunden, die{" "}
-                <span className="text-[#00ADB5]">mehr wollen</span>
-              </h2>
-              <p className="text-slate-300 mb-6 leading-relaxed">
-                Unser exklusives Programm für anspruchsvolle Fahrer. Nur{" "}
-                <strong className="text-white">20 Plätze</strong> verfügbar —
-                sichere dir deinen jetzt.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {benefits.map((b) => (
-                  <li key={b} className="flex items-center gap-3 text-sm text-slate-200">
-                    <div className="w-5 h-5 rounded-full bg-[#00ADB5]/20 flex items-center justify-center shrink-0">
-                      <Check size={12} className="text-[#00ADB5]" />
-                    </div>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/termin-buchen"
-                className="inline-block bg-[#00ADB5] hover:bg-[#009098] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
-              >
-                Jetzt Platz sichern
-              </Link>
-            </div>
+    <section className="bg-[#F8FAFC] py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        {/* Image */}
+        <div className="relative rounded-2xl overflow-hidden shadow-lg">
+          <span className="absolute top-6 left-6 z-10 flex items-center gap-2 bg-white/[0.92] text-slate-900 text-[11px] font-bold tracking-[1.1px] px-4 py-1.5 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00ADB5]" />
+            BEGRENZT AUF 20 PLÄTZE
+          </span>
+          <img
+            src="/images/select.jpeg"
+            alt="M&M Pflegeprogramm Select"
+            className="w-full h-full object-cover aspect-[4/5]"
+          />
+        </div>
 
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/images/select.jpeg"
-                  alt="M&M Select Pflegeprogramm"
-                  className="w-full h-full object-cover aspect-[4/5]"
-                />
-              </div>
-              {/* floating stat badge */}
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl px-5 py-3 flex items-center gap-3">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="fill-[#00ADB5] text-[#00ADB5]" />
-                  ))}
+        {/* Content */}
+        <div>
+          <div className="text-[#00ADB5] text-[11px] font-bold tracking-[2.2px] uppercase mb-4">
+            Neu bei M&M Detailing
+          </div>
+          <h2 className="text-[34px] sm:text-[42px] leading-[1.1] font-bold text-slate-900 mb-5">
+            Das Pflegeprogramm
+            <br />
+            für Kunden, die
+            <br />
+            <em className="text-[#00ADB5] not-italic italic">mehr wollen.</em>
+          </h2>
+          <p className="text-gray-500 text-[15px] leading-relaxed mb-8 max-w-lg">
+            Regelmäßige Aufbereitung. Fester Platz. Kein Aufwand. Unser Select-Programm
+            betreut dein Fahrzeug dauerhaft – zu besseren Konditionen als jede Einzelbuchung.
+          </p>
+
+          <div className="flex gap-10 mb-8">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <div className="text-[28px] font-extrabold text-slate-900">
+                  {s.num}
+                  <span className="text-[#00ADB5]">{s.suffix}</span>
                 </div>
-                <div className="text-slate-900 font-extrabold">5.0</div>
-                <div className="text-slate-500 text-xs">Google</div>
+                <div className="text-[11px] text-gray-500 uppercase tracking-wide mt-1">
+                  {s.label}
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-6">
+            <Link
+              href="/termin-buchen"
+              className="text-white font-bold px-7 py-3.5 rounded-full transition-opacity hover:opacity-90"
+              style={{ backgroundImage: "linear-gradient(135deg, #00B4B4, #0099CC)" }}
+            >
+              Programm entdecken
+            </Link>
+            <Link
+              href="/termin-buchen"
+              className="text-gray-500 font-semibold hover:text-[#00ADB5] transition-colors"
+            >
+              Direkt anfragen
+            </Link>
           </div>
         </div>
       </div>

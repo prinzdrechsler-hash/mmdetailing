@@ -1,77 +1,45 @@
 import Link from "next/link";
 
-const team = [
-  { name: "Max", role: "Co-Founder", initial: "M" },
-  { name: "Mo", role: "Co-Founder", initial: "M" },
-  { name: "Robin", role: "Co-Founder", initial: "R" },
-];
-
-const values = [
-  { title: "Ehrlichkeit", text: "Wir hören zu, wir verstehen, wir liefern." },
-  { title: "Zuverlässigkeit", text: "Jedes Fahrzeug behandeln wir wie unser eigenes." },
-  { title: "Nachhaltigkeit", text: "Wir setzen auf umweltbewusste Reinigungslösungen." },
-];
-
 export default function About() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]" id="ueber-uns">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <p className="text-[#00ADB5] text-sm font-bold tracking-widest uppercase mb-3">
-            Über uns
-          </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-            Eure Experten für Autoaufbereitung in Bielefeld
-          </h2>
-          <p className="text-slate-600 leading-relaxed mb-6">
-            M&M Detailing sind drei Freunde aus Bielefeld — Mo, Max und Robin. Was als
-            Experiment begann (die Aufbereitung eines befreundeten Golf 4), entwickelte sich
-            schnell zur professionellen Mission.
-          </p>
-
-          <div className="space-y-4 mb-8">
-            {values.map((v) => (
-              <div key={v.title} className="flex gap-4">
-                <div className="w-1 rounded-full bg-[#00ADB5] shrink-0" />
-                <div>
-                  <div className="font-bold text-slate-900 mb-0.5">{v.title}</div>
-                  <div className="text-slate-600 text-sm">{v.text}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <Link
-            href="/ueber-uns"
-            className="inline-block border-2 border-slate-200 hover:border-[#00ADB5] text-slate-700 hover:text-[#00ADB5] font-semibold px-6 py-3 rounded-lg transition-colors"
-          >
-            Mehr über uns
-          </Link>
+    <section className="bg-[#F8F9FA] py-20 px-4 sm:px-6 lg:px-8" id="ueber-uns">
+      <div className="max-w-[1250px] mx-auto grid grid-cols-1 lg:grid-cols-[485px_1fr] gap-12 lg:gap-20 items-center">
+        {/* Image */}
+        <div className="rounded-2xl overflow-hidden shadow-lg">
+          <img
+            src="/images/team.webp"
+            alt="Max, Mo und Robin, Gründer von M&M Detailing – mobile Autoaufbereitung in Bielefeld"
+            className="w-full h-full object-cover"
+          />
         </div>
 
+        {/* Content */}
         <div>
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm"
-              >
-                <div className="w-16 h-16 rounded-full bg-[#00ADB5]/10 flex items-center justify-center text-2xl font-extrabold text-[#00ADB5] mx-auto mb-4">
-                  {member.initial}
-                </div>
-                <div className="font-bold text-slate-900">{member.name}</div>
-                <div className="text-xs text-slate-500 mt-1">{member.role}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-            <blockquote className="text-slate-700 leading-relaxed italic">
-              &ldquo;Wir behandeln jedes Fahrzeug so, als wäre es unser eigenes.
-              Das ist kein Marketingspruch — das ist unser täglicher Anspruch.&rdquo;
-            </blockquote>
-            <div className="mt-4 text-sm text-slate-500">— Das M&M Detailing Team</div>
-          </div>
+          <span className="block text-[#00A8A8] text-sm font-semibold tracking-[1.5px] uppercase mb-4">
+            Über uns
+          </span>
+          <h2 className="text-3xl md:text-[40px] leading-[1.15] font-extrabold text-slate-900 mb-6">
+            Eure Experten für
+            <br />
+            Autoaufbereitung in Bielefeld
+          </h2>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Wir sind Max, Mo & Robin – drei Freunde aus der Region mit einer gemeinsamen
+            Leidenschaft: Fahrzeuge durch präzises Detailing in Bielefeld auf ein neues
+            Niveau zu bringen.
+          </p>
+          <p className="text-gray-600 leading-relaxed mb-8">
+            Was als Hobby begann, ist heute unsere Mission als mobile Autoaufbereiter. Jedes
+            Fahrzeug behandeln wir bei der Innenreinigung und Lackpflege so, als wäre es
+            unser eigenes.
+          </p>
+          <Link
+            href="/ueber-uns"
+            className="inline-block text-white font-semibold px-7 py-3.5 rounded-[14px] transition-opacity hover:opacity-90"
+            style={{ backgroundImage: "linear-gradient(135deg, #00B4B4, #0099CC)" }}
+          >
+            Erfahre mehr über uns
+          </Link>
         </div>
       </div>
     </section>
