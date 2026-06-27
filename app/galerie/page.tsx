@@ -6,12 +6,23 @@ export const metadata: Metadata = {
     "Vorher/Nachher-Bilder aus echten Aufbereitungen von M&M Detailing in Bielefeld.",
 };
 
-const categories = ["Alle", "Außen", "Innen", "Vorher/Nachher", "Spezial"];
-
-const placeholders = Array.from({ length: 16 }, (_, i) => ({
-  id: i + 1,
-  category: ["Außen", "Innen", "Vorher/Nachher", "Spezial"][i % 4],
-}));
+const images = [
+  "/images/gallery/g01.jpg",
+  "/images/gallery/g02.webp",
+  "/images/gallery/g03.webp",
+  "/images/gallery/g04.webp",
+  "/images/gallery/g05.webp",
+  "/images/gallery/g06.webp",
+  "/images/gallery/g07.webp",
+  "/images/gallery/g08.webp",
+  "/images/gallery/g09.jpg",
+  "/images/gallery/g10.webp",
+  "/images/gallery/g11.webp",
+  "/images/gallery/g12.jpg",
+  "/images/gallery/g13.jpg",
+  "/images/gallery/g14.jpg",
+  "/images/gallery/g16.jpg",
+];
 
 export default function Page() {
   return (
@@ -31,33 +42,18 @@ export default function Page() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        {/* Category Filter */}
-        <div className="flex flex-wrap gap-3 justify-center mb-12">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors border-2 ${
-                cat === "Alle"
-                  ? "bg-[#00ADB5] text-white border-[#00ADB5]"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-[#00ADB5] hover:text-[#00ADB5]"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-          {placeholders.map((item) => (
+          {images.map((src, i) => (
             <div
-              key={item.id}
-              className="relative aspect-square bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+              key={i}
+              className="relative aspect-square rounded-xl overflow-hidden border border-slate-200 shadow-sm group"
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-                <span className="text-4xl mb-2">🚗</span>
-                <span className="text-xs text-slate-400">{item.category}</span>
-              </div>
+              <img
+                src={src}
+                alt={`M&M Detailing Aufbereitung ${i + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>

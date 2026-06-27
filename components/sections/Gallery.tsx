@@ -1,14 +1,14 @@
 import Link from "next/link";
 
-const placeholders = [
-  { tag: "Exterior" },
-  { tag: "Interior" },
-  { tag: "Before & After" },
-  { tag: "Wheels" },
-  { tag: "Mobile" },
-  { tag: "Result" },
-  { tag: "Cockpit" },
-  { tag: "Sealant" },
+const images = [
+  "/images/gallery/g01.jpg",
+  "/images/gallery/g02.webp",
+  "/images/gallery/g03.webp",
+  "/images/gallery/g04.webp",
+  "/images/gallery/g05.webp",
+  "/images/gallery/g06.webp",
+  "/images/gallery/g07.webp",
+  "/images/gallery/g08.webp",
 ];
 
 export default function Gallery() {
@@ -25,15 +25,17 @@ export default function Gallery() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-          {placeholders.map((item, i) => (
+          {images.map((src, i) => (
             <div
               key={i}
-              className="relative aspect-square bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm group hover:shadow-md transition-shadow"
+              className="relative aspect-square rounded-xl overflow-hidden border border-slate-200 shadow-sm group"
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-                <div className="text-4xl mb-2">🚗</div>
-                <span className="text-xs text-slate-400">{item.tag}</span>
-              </div>
+              <img
+                src={src}
+                alt={`M&M Detailing Aufbereitung Beispiel ${i + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>

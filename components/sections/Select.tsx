@@ -46,23 +46,23 @@ export default function Select() {
               </Link>
             </div>
 
-            <div className="flex justify-center">
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 w-full max-w-xs text-center">
-                <div className="flex justify-center gap-1 mb-2">
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="/images/select.jpeg"
+                  alt="M&M Select Pflegeprogramm"
+                  className="w-full h-full object-cover aspect-[4/5]"
+                />
+              </div>
+              {/* floating stat badge */}
+              <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl px-5 py-3 flex items-center gap-3">
+                <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={20} className="fill-[#00ADB5] text-[#00ADB5]" />
+                    <Star key={i} size={16} className="fill-[#00ADB5] text-[#00ADB5]" />
                   ))}
                 </div>
-                <div className="text-5xl font-extrabold text-[#00ADB5] mb-1">5.0</div>
-                <div className="text-slate-400 text-sm mb-6">Google-Bewertung</div>
-                <div className="border-t border-white/10 pt-6">
-                  <div className="text-3xl font-extrabold text-white mb-1">13%</div>
-                  <div className="text-slate-400 text-sm">Ersparnis mit Select</div>
-                </div>
-                <div className="border-t border-white/10 pt-6 mt-6">
-                  <div className="text-3xl font-extrabold text-[#00ADB5] mb-1">20</div>
-                  <div className="text-slate-400 text-sm">Limitierte Plätze</div>
-                </div>
+                <div className="text-slate-900 font-extrabold">5.0</div>
+                <div className="text-slate-500 text-xs">Google</div>
               </div>
             </div>
           </div>

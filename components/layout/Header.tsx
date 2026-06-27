@@ -34,10 +34,16 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-extrabold tracking-tight">
-              <span className="text-[#00ADB5]">M&M</span>{" "}
-              <span className="text-slate-900">Detailing</span>
+          <Link href="/" className="flex items-center gap-3">
+            <img src="/images/logo.webp" alt="M&M Detailing Logo" className="h-10 w-auto" />
+            <span className="leading-tight">
+              <span className="block text-lg font-extrabold tracking-tight">
+                <span className="text-[#00ADB5]">M&M</span>{" "}
+                <span className="text-slate-900">Detailing</span>
+              </span>
+              <span className="block text-[11px] text-slate-500 -mt-0.5">
+                Autoaufbereitung Bielefeld
+              </span>
             </span>
           </Link>
 
