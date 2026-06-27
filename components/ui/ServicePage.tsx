@@ -31,23 +31,22 @@ export default function ServicePage({
   note,
 }: ServicePageProps) {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20">
       {/* Hero */}
-      <div className="relative bg-[#111111] border-b border-white/10 py-20 px-4 sm:px-6">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,168,76,0.06)_0%,_transparent_60%)]" />
-        <div className="relative max-w-4xl mx-auto">
+      <div className="bg-[#F8FAFC] border-b border-slate-200 py-16 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
           <Link
             href="/leistungen"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-[#C9A84C] text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-slate-500 hover:text-[#00ADB5] text-sm mb-8 transition-colors"
           >
             <ArrowLeft size={16} />
             Alle Leistungen
           </Link>
-          <div className="inline-block bg-[#C9A84C]/10 border border-[#C9A84C]/30 text-[#C9A84C] text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
+          <div className="inline-block bg-[#00ADB5]/10 text-[#00897e] text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
             {badge}
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
-          <p className="text-xl text-gray-400 mb-2">{subtitle}</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">{title}</h1>
+          <p className="text-xl text-slate-600">{subtitle}</p>
         </div>
       </div>
 
@@ -56,28 +55,28 @@ export default function ServicePage({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left */}
           <div>
-            <h2 className="text-2xl font-bold mb-4">Was ist dabei?</h2>
-            <p className="text-gray-400 leading-relaxed mb-8">{description}</p>
+            <h2 className="text-2xl font-extrabold text-slate-900 mb-4">Was ist dabei?</h2>
+            <p className="text-slate-600 leading-relaxed mb-8">{description}</p>
 
             <ul className="space-y-3 mb-8">
               {features.map((f) => (
                 <li key={f} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#C9A84C]/20 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={12} className="text-[#C9A84C]" />
+                  <div className="w-5 h-5 rounded-full bg-[#00ADB5]/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check size={12} className="text-[#00ADB5]" />
                   </div>
-                  <span className="text-gray-300 text-sm">{f}</span>
+                  <span className="text-slate-700 text-sm">{f}</span>
                 </li>
               ))}
             </ul>
 
             {addons && addons.length > 0 && (
               <div>
-                <h3 className="text-lg font-semibold mb-3">Zusatzleistungen</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Zusatzleistungen</h3>
                 <div className="flex flex-wrap gap-2">
                   {addons.map((a) => (
                     <span
                       key={a}
-                      className="bg-[#1A1A1A] border border-white/10 text-gray-400 text-xs px-3 py-1.5 rounded-full"
+                      className="bg-[#F8FAFC] border border-slate-200 text-slate-600 text-xs px-3 py-1.5 rounded-full"
                     >
                       {a}
                     </span>
@@ -89,32 +88,30 @@ export default function ServicePage({
 
           {/* Right – Pricing */}
           <div>
-            <div className="bg-[#111111] border border-white/10 rounded-2xl p-6 sticky top-24">
-              <h2 className="text-xl font-bold mb-1">Preise</h2>
-              <p className="text-gray-500 text-sm mb-6">⏱ {duration}</p>
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm sticky top-24">
+              <h2 className="text-xl font-extrabold text-slate-900 mb-1">Preise</h2>
+              <p className="text-slate-500 text-sm mb-6">⏱ {duration}</p>
 
               <div className="space-y-4 mb-6">
                 {prices.map((p) => (
                   <div
                     key={p.size}
-                    className="flex items-start justify-between gap-4 pb-4 border-b border-white/10 last:border-0 last:pb-0"
+                    className="flex items-start justify-between gap-4 pb-4 border-b border-slate-100 last:border-0 last:pb-0"
                   >
                     <div>
-                      <div className="font-medium">{p.size}</div>
-                      <div className="text-xs text-gray-500">{p.example}</div>
+                      <div className="font-medium text-slate-900">{p.size}</div>
+                      <div className="text-xs text-slate-500">{p.example}</div>
                     </div>
-                    <div className="text-[#C9A84C] font-bold whitespace-nowrap">{p.price}</div>
+                    <div className="text-[#00ADB5] font-extrabold whitespace-nowrap">{p.price}</div>
                   </div>
                 ))}
               </div>
 
-              {note && (
-                <p className="text-xs text-gray-500 mb-6">{note}</p>
-              )}
+              {note && <p className="text-xs text-slate-500 mb-6">{note}</p>}
 
               <Link
                 href="/termin-buchen"
-                className="block text-center bg-[#C9A84C] hover:bg-[#E2C97E] text-black font-semibold py-3 rounded-lg transition-colors"
+                className="block text-center bg-[#00ADB5] hover:bg-[#009098] text-white font-semibold py-3 rounded-lg transition-colors"
               >
                 Jetzt Termin anfragen
               </Link>

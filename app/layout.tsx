@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "M&M Detailing – Professionelle Autoaufbereitung in Bielefeld",
@@ -19,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={inter.className}>
-      <body className="min-h-screen flex flex-col bg-[#0A0A0A] text-white">
+    <html lang="de">
+      <body className="min-h-screen flex flex-col bg-white text-slate-700">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

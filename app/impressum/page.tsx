@@ -6,13 +6,13 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
-        <h1 className="text-3xl font-bold mb-10">Impressum</h1>
+        <h1 className="text-3xl font-extrabold text-slate-900 mb-10">Impressum</h1>
 
-        <div className="prose prose-invert max-w-none space-y-8 text-gray-400">
+        <div className="max-w-none space-y-8 text-slate-600">
           <section>
-            <h2 className="text-lg font-semibold text-white mb-3">Angaben gemäß § 5 TMG</h2>
+            <h2 className="text-lg font-bold text-slate-900 mb-3">Angaben gemäß § 5 TMG</h2>
             <p>
               M&M Detailing<br />
               Bielefeld<br />
@@ -21,25 +21,25 @@ export default function Page() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-3">Kontakt</h2>
+            <h2 className="text-lg font-bold text-slate-900 mb-3">Kontakt</h2>
             <p>
               E-Mail:{" "}
-              <a href="mailto:info@mmdetailing.de" className="text-[#C9A84C] hover:underline">
+              <a href="mailto:info@mmdetailing.de" className="text-[#00ADB5] hover:underline">
                 info@mmdetailing.de
               </a>
             </p>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-3">
+            <h2 className="text-lg font-bold text-slate-900 mb-3">
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
             </h2>
             <p>M&M Detailing, Bielefeld</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-3">Haftungsausschluss</h2>
-            <h3 className="text-base font-medium text-white mb-2">Haftung für Inhalte</h3>
+            <h2 className="text-lg font-bold text-slate-900 mb-3">Haftungsausschluss</h2>
+            <h3 className="text-base font-medium text-slate-900 mb-2">Haftung für Inhalte</h3>
             <p className="text-sm leading-relaxed">
               Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die
               Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch

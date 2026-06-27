@@ -56,19 +56,18 @@ const services = [
 
 export default function Page() {
   return (
-    <div className="pt-24 pb-20">
-      <div className="relative bg-[#111111] border-b border-white/10 py-20 px-4 sm:px-6 text-center">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,168,76,0.06)_0%,_transparent_60%)]" />
-        <div className="relative max-w-3xl mx-auto">
-          <p className="text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-4">
+    <div className="pt-20">
+      <div className="bg-[#F8FAFC] border-b border-slate-200 py-16 px-4 sm:px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#00ADB5] text-sm font-bold tracking-widest uppercase mb-4">
             Leistungen
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
             Was wir für dich tun
           </h1>
-          <p className="text-gray-400 text-lg">
+          <p className="text-slate-600 text-lg">
             Professionelle Fahrzeugaufbereitung — mobil, direkt bei dir vor Ort.
-            Kein Aufschlag für den Hausbesuch.
+            Kein Aufpreis für den Hausbesuch.
           </p>
         </div>
       </div>
@@ -79,27 +78,27 @@ export default function Page() {
             <Link
               key={service.href}
               href={service.href}
-              className={`group relative p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${
+              className={`group relative p-6 rounded-2xl bg-white transition-all ${
                 service.featured
-                  ? "bg-[#C9A84C]/10 border-[#C9A84C]/50 hover:border-[#C9A84C]"
-                  : "bg-[#111111] border-white/10 hover:border-[#C9A84C]/30"
+                  ? "border-2 border-[#00ADB5] shadow-md"
+                  : "border border-slate-200 shadow-sm hover:shadow-md hover:border-[#00ADB5]/40"
               }`}
             >
               {service.featured && (
-                <span className="absolute -top-3 left-6 bg-[#C9A84C] text-black text-xs font-bold px-3 py-1 rounded-full">
+                <span className="absolute -top-3 left-6 bg-[#00ADB5] text-white text-xs font-bold px-3 py-1 rounded-full">
                   Beliebt
                 </span>
               )}
               <div className="text-3xl mb-4">{service.icon}</div>
-              <h2 className="text-xl font-semibold mb-2 group-hover:text-[#C9A84C] transition-colors">
+              <h2 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#00ADB5] transition-colors">
                 {service.title}
               </h2>
-              <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+              <p className="text-slate-600 text-sm mb-4">{service.description}</p>
               <div className="flex items-center justify-between">
-                <span className="text-[#C9A84C] font-bold">{service.price}</span>
+                <span className="text-[#00ADB5] font-extrabold">{service.price}</span>
                 <ArrowRight
                   size={18}
-                  className="text-gray-600 group-hover:text-[#C9A84C] group-hover:translate-x-1 transition-all"
+                  className="text-slate-400 group-hover:text-[#00ADB5] group-hover:translate-x-1 transition-all"
                 />
               </div>
             </Link>

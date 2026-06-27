@@ -19,17 +19,16 @@ const benefits = [
 
 export default function Page() {
   return (
-    <div className="pt-24 pb-20">
-      <div className="relative bg-[#111111] border-b border-white/10 py-20 px-4 sm:px-6 text-center">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,168,76,0.06)_0%,_transparent_60%)]" />
-        <div className="relative max-w-3xl mx-auto">
-          <p className="text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-4">
+    <div className="pt-20">
+      <div className="bg-[#F8FAFC] border-b border-slate-200 py-16 px-4 sm:px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#00ADB5] text-sm font-bold tracking-widest uppercase mb-4">
             Für Unternehmen
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
             Flottenaufbereitung & Firmenfahrzeuge
           </h1>
-          <p className="text-gray-400 text-lg">
+          <p className="text-slate-600 text-lg">
             Professionelle Fahrzeugpflege für Unternehmen — flexibel, zuverlässig und
             direkt auf deinem Gelände.
           </p>
@@ -39,49 +38,49 @@ export default function Page() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
           <div>
-            <h2 className="text-2xl font-bold mb-6">Warum M&M für dein Unternehmen?</h2>
-            <p className="text-gray-400 leading-relaxed mb-6">
+            <h2 className="text-2xl font-extrabold text-slate-900 mb-6">Warum M&M für dein Unternehmen?</h2>
+            <p className="text-slate-600 leading-relaxed mb-6">
               Firmenwagen repräsentieren dein Unternehmen. Sauber aufbereitete Fahrzeuge
               hinterlassen bei Kunden und Partnern einen professionellen Eindruck.
             </p>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <p className="text-slate-600 leading-relaxed mb-8">
               Wir kommen direkt zu dir auf das Firmengelände und kümmern uns um deine
               Fahrzeugflotte — nach Absprache regelmäßig, flexibel und zuverlässig.
             </p>
             <ul className="space-y-3">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#C9A84C]/20 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={12} className="text-[#C9A84C]" />
+                  <div className="w-5 h-5 rounded-full bg-[#00ADB5]/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check size={12} className="text-[#00ADB5]" />
                   </div>
-                  <span className="text-gray-300 text-sm">{b}</span>
+                  <span className="text-slate-700 text-sm">{b}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-[#C9A84C]/10 border border-[#C9A84C]/30 rounded-2xl p-8">
-            <h2 className="text-xl font-bold mb-4">Individuelles Angebot anfragen</h2>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+          <div className="bg-[#F8FAFC] border border-slate-200 rounded-2xl p-8">
+            <h2 className="text-xl font-extrabold text-slate-900 mb-4">Individuelles Angebot anfragen</h2>
+            <p className="text-slate-600 text-sm leading-relaxed mb-6">
               Jede Flotte ist anders. Kontaktiere uns für ein maßgeschneidertes Angebot —
               wir melden uns schnell zurück.
             </p>
             <div className="space-y-3 mb-6">
               <a
                 href="mailto:info@mmdetailing.de"
-                className="flex items-center justify-center gap-2 w-full bg-[#C9A84C] hover:bg-[#E2C97E] text-black font-semibold py-3 rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 w-full bg-[#00ADB5] hover:bg-[#009098] text-white font-semibold py-3 rounded-lg transition-colors"
               >
                 info@mmdetailing.de
               </a>
               <Link
                 href="/termin-buchen"
-                className="flex items-center justify-center gap-2 w-full border border-white/20 hover:border-[#C9A84C]/50 text-white hover:text-[#C9A84C] font-semibold py-3 rounded-lg transition-colors"
+                className="flex items-center justify-center gap-2 w-full border-2 border-slate-200 hover:border-[#00ADB5] text-slate-700 hover:text-[#00ADB5] font-semibold py-3 rounded-lg transition-colors"
               >
                 Online anfragen
               </Link>
             </div>
-            <p className="text-xs text-gray-500 text-center">
-              Kein Aufschlag für den Hausbesuch. Schnelle Rückmeldung garantiert.
+            <p className="text-xs text-slate-500 text-center">
+              Kein Aufpreis für den Hausbesuch. Schnelle Rückmeldung garantiert.
             </p>
           </div>
         </div>

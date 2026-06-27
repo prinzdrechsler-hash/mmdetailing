@@ -55,22 +55,21 @@ const extras = [
 
 export default function Page() {
   return (
-    <div className="pt-24 pb-20">
-      <div className="relative bg-[#111111] border-b border-white/10 py-20 px-4 sm:px-6">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,168,76,0.06)_0%,_transparent_60%)]" />
-        <div className="relative max-w-4xl mx-auto">
+    <div className="pt-20">
+      <div className="bg-[#F8FAFC] border-b border-slate-200 py-16 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
           <Link
             href="/leistungen"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-[#C9A84C] text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-slate-500 hover:text-[#00ADB5] text-sm mb-8 transition-colors"
           >
             <ArrowLeft size={16} />
             Alle Leistungen
           </Link>
-          <div className="inline-block bg-[#C9A84C]/10 border border-[#C9A84C]/30 text-[#C9A84C] text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
+          <div className="inline-block bg-[#00ADB5]/10 text-[#00897e] text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
             Extras
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Extras & Spezialleistungen</h1>
-          <p className="text-xl text-gray-400">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Extras & Spezialleistungen</h1>
+          <p className="text-xl text-slate-600">
             Ergänze deine Aufbereitung mit unseren Spezialleistungen.
           </p>
         </div>
@@ -82,24 +81,24 @@ export default function Page() {
             <div
               key={extra.id}
               id={extra.id}
-              className="bg-[#111111] border border-white/10 rounded-2xl p-6 hover:border-[#C9A84C]/30 transition-colors"
+              className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="text-3xl mb-3">{extra.icon}</div>
-              <h3 className="text-lg font-semibold mb-2">{extra.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{extra.description}</p>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{extra.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{extra.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="bg-[#C9A84C]/10 border border-[#C9A84C]/30 rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold mb-3">Individuelles Angebot</h2>
-          <p className="text-gray-400 mb-6">
+        <div className="bg-[#00ADB5]/10 border border-[#00ADB5]/30 rounded-2xl p-8 text-center">
+          <h2 className="text-2xl font-extrabold text-slate-900 mb-3">Individuelles Angebot</h2>
+          <p className="text-slate-600 mb-6">
             Alle Spezialleistungen werden individuell kalkuliert. Kontaktiere uns für ein
             persönliches Angebot — wir beraten dich gerne.
           </p>
           <Link
             href="/termin-buchen"
-            className="inline-block bg-[#C9A84C] hover:bg-[#E2C97E] text-black font-semibold px-8 py-3 rounded-lg transition-colors"
+            className="inline-block bg-[#00ADB5] hover:bg-[#009098] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
           >
             Anfrage stellen
           </Link>

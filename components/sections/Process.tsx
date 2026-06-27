@@ -3,61 +3,52 @@ const steps = [
     number: "01",
     title: "Anfrage & Buchung",
     description:
-      "Online-Anfrage mit schneller Rückmeldung. Wir besprechen deine Wünsche und finden den passenden Termin.",
+      "Einfache Online-Anfrage mit schneller Rückmeldung. Wir finden zeitnah den passenden Termin für deine Fahrzeugpflege in Bielefeld.",
   },
   {
     number: "02",
     title: "Wir kommen zu dir",
     description:
-      "Unser Team erscheint pünktlich bei dir. Du brauchst nur Zugang zu Wasser und Strom.",
+      "Wir kommen zu dir. Alles was wir vor Ort benötigen, ist ein Strom- und Wasseranschluss. Den Rest bringen wir mit.",
   },
   {
     number: "03",
     title: "Wir arbeiten, du entspannst",
     description:
-      "Innenreinigung, Wäsche, Lackversiegelung — alles läuft professionell ab, während du deine Zeit genießt.",
+      "Ob Innenreinigung, Motorwäsche oder Lackversiegelung — wir arbeiten mit Präzision, während du dich entspannst.",
   },
   {
     number: "04",
     title: "Übergabe & Ergebnis",
     description:
-      "Gemeinsame Abnahme, Schlüsselübergabe. Dein Fahrzeug erstrahlt in neuem Glanz — garantiert.",
+      "Dein Fahrzeug glänzt wie neu. Gemeinsame Abnahme, Schlüsselübergabe und ein Ergebnis, das begeistert.",
   },
 ];
 
 export default function Process() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#111111]" id="ablauf">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]" id="ablauf">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-3">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
             So läuft es ab
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            In 4 Schritten zum perfekten Fahrzeug
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
-            Einfach, unkompliziert und direkt bei dir vor Ort.
+          <p className="text-slate-600 max-w-xl mx-auto">
+            Einfach, unkompliziert und direkt bei dir vor Ort — in vier Schritten zum perfekten Fahrzeug.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <div key={step.number} className="relative">
-              {/* Connector line */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-[calc(100%-0px)] w-full h-px bg-gradient-to-r from-[#C9A84C]/50 to-transparent z-0" />
-              )}
-
-              <div className="relative z-10 bg-[#1A1A1A] border border-white/10 rounded-2xl p-6 h-full hover:border-[#C9A84C]/30 transition-colors">
-                <div className="text-4xl font-bold text-[#C9A84C]/20 mb-4">
-                  {step.number}
-                </div>
-                <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {step.description}
-                </p>
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="w-12 h-12 rounded-xl bg-[#00ADB5]/10 flex items-center justify-center text-lg font-extrabold text-[#00ADB5] mb-4">
+                {step.number}
               </div>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>

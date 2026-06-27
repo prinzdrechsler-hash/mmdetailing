@@ -6,13 +6,13 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16">
-        <h1 className="text-3xl font-bold mb-10">Datenschutzerklärung</h1>
+        <h1 className="text-3xl font-extrabold text-slate-900 mb-10">Datenschutzerklärung</h1>
 
-        <div className="space-y-8 text-gray-400 text-sm leading-relaxed">
+        <div className="space-y-8 text-slate-600 text-sm leading-relaxed">
           <section>
-            <h2 className="text-lg font-semibold text-white mb-3">
+            <h2 className="text-lg font-bold text-slate-900 mb-3">
               1. Datenschutz auf einen Blick
             </h2>
             <p>
@@ -24,15 +24,15 @@ export default function Page() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-3">
+            <h2 className="text-lg font-bold text-slate-900 mb-3">
               2. Datenerfassung auf dieser Website
             </h2>
-            <h3 className="font-medium text-white mb-2">Wer ist verantwortlich?</h3>
+            <h3 className="font-medium text-slate-900 mb-2">Wer ist verantwortlich?</h3>
             <p className="mb-4">
               Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber.
               Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.
             </p>
-            <h3 className="font-medium text-white mb-2">Wie erfassen wir Ihre Daten?</h3>
+            <h3 className="font-medium text-slate-900 mb-2">Wie erfassen wir Ihre Daten?</h3>
             <p>
               Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen —
               zum Beispiel durch das Ausfüllen des Kontaktformulars. Andere Daten werden
@@ -42,10 +42,10 @@ export default function Page() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-white mb-3">3. Kontakt</h2>
+            <h2 className="text-lg font-bold text-slate-900 mb-3">3. Kontakt</h2>
             <p>
               Bei Fragen zum Datenschutz wenden Sie sich an:{" "}
-              <a href="mailto:info@mmdetailing.de" className="text-[#C9A84C] hover:underline">
+              <a href="mailto:info@mmdetailing.de" className="text-[#00ADB5] hover:underline">
                 info@mmdetailing.de
               </a>
             </p>
